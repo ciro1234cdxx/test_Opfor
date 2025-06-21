@@ -1,64 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>HACKED BY OPFOR</title>
-  <style>
-    body {
-      background-color: black;
-      color: #00ff00;
-      font-family: "Courier New", monospace;
-      text-align: center;
-      margin-top: 100px;
-      animation: glitch 1s infinite;
-    }
-
-    h1 {
-      font-size: 48px;
-      text-shadow: 0 0 10px #00ff00;
-    }
-
-    p {
-      font-size: 18px;
-      margin-top: 30px;
-    }
-
-    @keyframes glitch {
-      0% { text-shadow: 0 0 5px #00ff00; }
-      50% { text-shadow: 2px 0 5px #ff0000; }
-      100% { text-shadow: -2px 0 5px #00ffff; }
-    }
-
-    .glitch {
-      animation: glitch 1s infinite;
-    }
-
-    .terminal {
-      margin: 0 auto;
-      width: 70%;
-      text-align: left;
-      background-color: #111;
-      border: 1px solid #00ff00;
-      padding: 20px;
-      font-size: 14px;
-    }
-
-    .warning {
-      color: red;
-      font-weight: bold;
-      margin-top: 50px;
-    }
-  </style>
+    <title>Sistema Compromesso</title>
+    <style>
+        body {
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            font-family: 'Courier New', monospace;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .glitch {
+            font-size: 72px;
+            text-shadow: 0 0 10px rgb(0, 0, 0);
+            animation: glitch 2s infinite;
+        }
+        
+        @keyframes glitch {
+            0% { text-shadow: 2px 0 #0ff, -2px 0 #f0f; }
+            50% { text-shadow: -2px 0 #0ff, 2px 0 #f0f; }
+            100% { text-shadow: 2px 0 #0ff, -2px 0 #f0f; }
+        }
+        
+        .message {
+            max-width: 800px;
+            margin: 30px auto;
+            text-align: left;
+            line-height: 1.6;
+            font-size: 18px;
+            border: 1px solid rgb(0, 0, 0);
+            padding: 20px;
+            background: rgba(0,255,0,0.05);
+        }
+        
+        img {
+            max-width: 400px;
+            margin: 20px 0;
+            filter: hue-rotate(90deg);
+        }
+    </style>
 </head>
 <body>
-  <h1 class="glitch">[ HACKED BY OPFOR ]</h1>
-  <div class="terminal">
-    <p>root@server:~# access granted</p>
-    <p>root@server:~# downloading sensitive data...</p>
-    <p>root@server:~# uploading payload...</p>
-    <p>root@server:~# system breach complete.</p>
-  </div>
-  <p class="warning">Il tuo sistema è stato compromesso.</p>
-  <p>Contattaci: opfor@protonmail.com</p>
+    <h1 class="glitch">Hackerati</h1>
+    
+    <img src="https://cdn.discordapp.com/attachments/1377667347837620286/1385733756413018233/j3moHux1qL.png?ex=685724a1&is=6855d321&hm=f20c3ee6686c2e2cd80350fd70286ace881ea8775f8dbe1be7a4d94b78e82a02&" alt="Warning">
+    
+    <div class="message">
+        <p>Questo server è stato violato da "Shadow Syndicate".</p>
+        
+        <p>Abbiamo ottenuto l'accesso completo a:</p>
+        <ul>
+            <li>Tutti i database utente</li>
+            <li>File di configurazione crittografati</li>
+            <li>Log di sistema e credenziali amministratore</li>
+            <li>Backup remoti degli ultimi 6 mesi</li>
+        </ul>
+        
+        <p>Il vostro tentativo di ripristino del sistema è stato anticipato. Ogni modifica ai permessi o alle password è stata registrata. I nostri bot mantengono costantemente l'accesso attraverso 17 backdoor distribuite nel vostro network.</p>
+        
+        <p>Se tenterete di:</p>
+        <ul>
+            <li>Ripristinare da backup</li>
+            <li>Cambiare le credenziali</li>
+            <li>Isolare i sistemi</li>
+            <li>Contattare le autorità</li>
+        </ul>
+        
+        <p>...rilasceremo pubblicamente:</p>
+        <ul>
+            <li>Dati personali di 2.7 milioni di utenti</li>
+            <li>Correspondence private tra dirigenti</li>
+            <li>Documenti finanziari non pubblici</li>
+            <li>Password in chiaro e hash non salati</li>
+        </ul>
+        
+        <p>Il riscatto richiesto è di 50 Bitcoin (≈1.2M€) verso il wallet: 1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa</p>
+        
+        <p>Avete tempo 72 ore prima della pubblicazione automatica dei dati.</p>
+        <p>Non ci sono trattative. Non ci sono seconde possibilità.</p>
+        
+        <p style="margin-top:30px">Non provate a sfidarci. Sappiamo dove state.</p>
+    </div>
 </body>
 </html>
