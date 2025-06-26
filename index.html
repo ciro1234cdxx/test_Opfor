@@ -1,87 +1,151 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Sistema Compromesso</title>
-    <style>
-        body {
-            background-color: #ffffff;
-            color: rgb(0, 0, 0);
-            font-family: 'Courier New', monospace;
-            margin: 0;
-            padding: 20px;
-            text-align: center;
-        }
-        
-        .glitch {
-            font-size: 72px;
-            text-shadow: 0 0 10px rgb(0, 0, 0);
-            animation: glitch 2s infinite;
-        }
-        
-        @keyframes glitch {
-            0% { text-shadow: 2px 0 #0ff, -2px 0 #f0f; }
-            50% { text-shadow: -2px 0 #0ff, 2px 0 #f0f; }
-            100% { text-shadow: 2px 0 #0ff, -2px 0 #f0f; }
-        }
-        
-        .message {
-            max-width: 800px;
-            margin: 30px auto;
-            text-align: left;
-            line-height: 1.6;
-            font-size: 18px;
-            border: 1px solid rgb(0, 0, 0);
-            padding: 20px;
-            background: rgba(0,255,0,0.05);
-        }
-        
-        img {
-            max-width: 400px;
-            margin: 20px 0;
-            filter: hue-rotate(90deg);
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>System Breach Alert</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #000;
+      color: #00ff00;
+      font-family: monospace;
+      white-space: pre-wrap;
+      overflow: auto;
+    }
+
+    #loading-screen {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px;
+      animation: flicker 1.5s infinite alternate;
+    }
+
+    @keyframes flicker {
+      0% { opacity: 1; }
+      100% { opacity: 0.5; }
+    }
+
+    #main-content {
+      display: none;
+      padding: 20px;
+    }
+
+    .important {
+      color: #ff0000;
+      font-weight: bold;
+    }
+
+    .opfor {
+      color: #ff5555;
+    }
+
+    /* IMMAGINE REGOLABILE */
+    .header-image {
+      display: block;
+      margin: 0 auto 20px auto;
+      width: 180px;       /* Cambia qui la larghezza */
+      height: auto;       /* Puoi anche mettere "60px" se vuoi altezza fissa */
+      object-fit: contain;
+    }
+
+    #terminal {
+      white-space: pre-wrap;
+      line-height: 1.5em;
+    }
+  </style>
 </head>
 <body>
-    <h1 class="glitch">Hackerati</h1>
-    
-    <img src="https://cdn.discordapp.com/attachments/1377667347837620286/1385733756413018233/j3moHux1qL.png?ex=685724a1&is=6855d321&hm=f20c3ee6686c2e2cd80350fd70286ace881ea8775f8dbe1be7a4d94b78e82a02&" alt="Warning">
-    
-    <div class="message">
-        <p>Questo server è stato violato da "Shadow Syndicate".</p>
-        
-        <p>Abbiamo ottenuto l'accesso completo a:</p>
-        <ul>
-            <li>Tutti i database utente</li>
-            <li>File di configurazione crittografati</li>
-            <li>Log di sistema e credenziali amministratore</li>
-            <li>Backup remoti degli ultimi 6 mesi</li>
-        </ul>
-        
-        <p>Il vostro tentativo di ripristino del sistema è stato anticipato. Ogni modifica ai permessi o alle password è stata registrata. I nostri bot mantengono costantemente l'accesso attraverso 17 backdoor distribuite nel vostro network.</p>
-        
-        <p>Se tenterete di:</p>
-        <ul>
-            <li>Ripristinare da backup</li>
-            <li>Cambiare le credenziali</li>
-            <li>Isolare i sistemi</li>
-            <li>Contattare le autorità</li>
-        </ul>
-        
-        <p>...rilasceremo pubblicamente:</p>
-        <ul>
-            <li>Dati personali di 2.7 milioni di utenti</li>
-            <li>Correspondence private tra dirigenti</li>
-            <li>Documenti finanziari non pubblici</li>
-            <li>Password in chiaro e hash non salati</li>
-        </ul>
-        
-        <p>Il riscatto richiesto è di 50 Bitcoin (≈1.2M€) verso il wallet: 1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa</p>
-        
-        <p>Avete tempo 72 ore prima della pubblicazione automatica dei dati.</p>
-        <p>Non ci sono trattative. Non ci sono seconde possibilità.</p>
-        
-        <p style="margin-top:30px">Non provate a sfidarci. Sappiamo dove state.</p>
-    </div>
+
+<!-- LOADING SCREEN -->
+<div id="loading-screen">
+  Initializing secure terminal connection...
+</div>
+
+<!-- MAIN CONTENT -->
+<div id="main-content">
+  <img src="https://cdn.discordapp.com/attachments/1377667347837620286/1385733756413018233/j3moHux1qL.png?ex=685e64e1&is=685d1361&hm=84520b091fcdf552e123be8b39faf2f320a57e5e93dcf21ceaf6ba76377f44e7&" alt="Top Image" class="header-image">
+  <div id="terminal"></div>
+</div>
+
+<script>
+  const lines = [
+    "$ Unauthorized Access Detected - SYSTEM BREACH ALERT",
+    "----------------------------------------------",
+    "[ WARNING: DATA COMPROMISED ]",
+    "",
+    "The Diamond Dogs Intelligence has been infiltrated.",
+    "Sensitive information has been STOLEN and critical systems COMPROMISED.",
+    "",
+    "Summary of Breach:",
+    "- Full Names of Active and Undercover Agents: LEAKED",
+    "- Private and Classified Documents: EXFILTRATED",
+    "- Shadow Copies: DELETED",
+    "- Communication Towers: DISABLED",
+    "",
+    "Warning:",
+    "Any attempt to recover the stolen data from the compromised servers will result in:",
+    "- Irreversible destruction of sensitive archives",
+    "- Exposure of damaging intelligence to global adversaries",
+    "- Total collapse of operational reputation",
+    "",
+    "The hackers behind this operation identify as: OPFOR",
+    "",
+    "----------------------------------------------",
+    "[ MESSAGE FROM OPFOR ]",
+    "",
+    "\"We have control. Your secrets are ours.",
+    "Your attempts to suppress us will only worsen your fate.",
+    "Accept your defeat, or face the consequences.\"",
+    "",
+    "----------------------------------------------",
+    "[ SYSTEM STATUS ]",
+    "- Server Integrity: Compromised",
+    "- Recovery Options: Blocked",
+    "- Security Measures: Neutralized",
+    "",
+    "Action Required: None – All resistance is futile.",
+    "",
+    "----------------------------------------------",
+    "$ Connection Terminated by Remote Source"
+  ];
+
+  const terminal = document.getElementById("terminal");
+
+  setTimeout(() => {
+    document.getElementById("loading-screen").style.display = "none";
+    document.getElementById("main-content").style.display = "block";
+    typeLines();
+  }, 4000); // 4 secondi
+
+  let currentLine = 0;
+
+  function typeLines() {
+    if (currentLine >= lines.length) return;
+    let line = lines[currentLine];
+    let i = 0;
+    let typedLine = '';
+
+    function typeChar() {
+      if (i < line.length) {
+        typedLine += line.charAt(i);
+        terminal.innerHTML += line.charAt(i);
+        i++;
+        setTimeout(typeChar, 15);
+      } else {
+        terminal.innerHTML += '\n';
+        currentLine++;
+        setTimeout(typeLines, 150);
+      }
+    }
+
+    typeChar();
+  }
+</script>
+
 </body>
 </html>
