@@ -10,7 +10,7 @@
       color: #00ff00;
       font-family: monospace;
       white-space: pre-wrap;
-      overflow: auto;
+      overflow-y: auto;
     }
 
     #loading-screen {
@@ -44,12 +44,11 @@
       color: #ff5555;
     }
 
-    /* IMMAGINE REGOLABILE */
     .header-image {
-      display: block;
-      margin: 0 auto 20px auto;
-      width: 180px;       /* Cambia qui la larghezza */
-      height: auto;       /* Puoi anche mettere "60px" se vuoi altezza fissa */
+      display: none;              /* Nascondi inizialmente */
+      margin: 20px auto;
+      max-width: 200px;
+      height: auto;
       object-fit: contain;
     }
 
@@ -68,7 +67,7 @@
 
 <!-- MAIN CONTENT -->
 <div id="main-content">
-  <img src="https://cdn.discordapp.com/attachments/1377667347837620286/1385733756413018233/j3moHux1qL.png?ex=685e64e1&is=685d1361&hm=84520b091fcdf552e123be8b39faf2f320a57e5e93dcf21ceaf6ba76377f44e7&" alt="Top Image" class="header-image">
+  <img src="https://cdn.discordapp.com/attachments/1377667347837620286/1385733756413018233/j3moHux1qL.png?ex=685e64e1&is=685d1361&hm=84520b091fcdf552e123be8b39faf2f320a57e5e93dcf21ceaf6ba76377f44e7&" alt="Top Image" class="header-image" id="logo">
   <div id="terminal"></div>
 </div>
 
@@ -115,24 +114,30 @@
   ];
 
   const terminal = document.getElementById("terminal");
+  const logo = document.getElementById("logo");
 
+  // Dopo caricamento iniziale
   setTimeout(() => {
     document.getElementById("loading-screen").style.display = "none";
     document.getElementById("main-content").style.display = "block";
     typeLines();
-  }, 4000); // 4 secondi
+  }, 4000);
 
+  // Effetto scrittura riga per riga
   let currentLine = 0;
 
   function typeLines() {
-    if (currentLine >= lines.length) return;
+    if (currentLine >= lines.length) {
+      // Mostra logo alla fine della digitazione
+      logo.style.display = "block";
+      return;
+    }
+
     let line = lines[currentLine];
     let i = 0;
-    let typedLine = '';
 
     function typeChar() {
       if (i < line.length) {
-        typedLine += line.charAt(i);
         terminal.innerHTML += line.charAt(i);
         i++;
         setTimeout(typeChar, 15);
